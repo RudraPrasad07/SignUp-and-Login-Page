@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Health & Fitness Form</title>
+	<link rel="stylesheet" href="info.css">
+</head>
+
+<body>
+	<div class="overlay"></div>
+	<div class="form-container">
+		<h2>Health & Fitness Form</h2>
+		<form>
+			<label>Gender</label>
+			<div class="radio-group">
+				<input type="radio" name="gender" value="Male" required> <label>Male</label>
+				<input type="radio" name="gender" value="Female"> <label>Female</label>
+			</div>
+
+			<label>Height (cm):</label>
+			<input type="number" name="height" placeholder="Enter your height" required>
+
+			<label>Weight (kg):</label>
+			<input type="number" name="weight" placeholder="Enter your weight" required>
+
+			<label>Medical Conditions:</label>
+			<textarea name="medicalConditions" placeholder="List any medical conditions"></textarea>
+
+			<label>Allergies:</label>
+			<textarea name="allergies" placeholder="List any allergies"></textarea>
+
+			<label>Activity Level:</label>
+			<select name="activityLevel">
+				<option value="" disabled selected>Select</option>
+				<option value="Sedentary">Sedentary</option>
+				<option value="Moderately Active">Moderately Active</option>
+				<option value="Active">Active</option>
+			</select>
+
+			<label>Daily Calorie Goal:</label>
+			<input type="number" name="calorieGoal" placeholder="Enter your calorie goal" required>
+
+			<label>Sleep Schedule:</label>
+			<textarea name="sleepSchedule" placeholder="Describe your sleep schedule"></textarea>
+
+			<button type="submit">Submit</button>
+		</form>
+	</div>
+
+	<script>
+		const images = [
+			'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDZ8fGZvcmVzdHxlbnwwfHx8fDE2ODc4NzQ1Nzc&ixlib=rb-1.2.1&q=80&w=1920',
+			'https://imgs.search.brave.com/wgt2rvZAlOdyB7R7mBzVCMv4EpjGggaKCdER-NbzQmg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9kYXJrLXJvb20t/d2l0aC1saWdodC1j/ZWlsaW5nLXNpZ24t/dGhhdC1zYXlzLW5v/LXRpcmVzXzEyMzE2/MzItMzEyOTIuanBn/P3NlbXQ9YWlzX2h5/YnJpZA',
+			'https://imgs.search.brave.com/pBa8yjjODIkNmrmCJ9oPBQy71wbFh_vcqf9BWbg_nQw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/Y3JlYXRlLnZpc3Rh/LmNvbS9hcGkvbWVk/aWEvc21hbGwvMTUz/MDMyNDA4L3N0b2Nr/LXBob3RvLXNwb3J0/eS1wZW9wbGUtZXhl/cmNpc2luZy1pbi1n/eW0',
+			'https://imgs.search.brave.com/pf6NyZarauW767BOq3nPukI1oqcJyvK_v0WUBJe_H_4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9wdWxz/ZS1tZWRpY2FsLWNv/bmNlcHQtYmFja2dy/b3VuZC1tZWRpY2lu/ZS1oZWFsdGhjYXJl/LTExNDc1NTU3Ni5q/cGc',
+		];
+		let currentIndex = 0;
+
+		function changeBackground() {
+			document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+			currentIndex = (currentIndex + 1) % images.length;
+		}
+		setInterval(changeBackground, 30000);
+		changeBackground(); 
+	</script>
+</body>
+
+</html>

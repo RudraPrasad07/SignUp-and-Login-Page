@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="welcomeMessage">Welcome, User!</h1>
+	<button type="submit" onclick="redirect()">Add Information</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+
+            if (name) {
+                document.getElementById('welcomeMessage').textContent = `Welcome, ${name}!`; 
+            } else {
+                alert('No name found. Redirecting to signup page...');
+                window.location.href = 'http://localhost:8080/signup.html';
+            }
+        });
+		
+		function redirect(){
+			window.location.href='http://localhost:8080/info.html';
+		}
+    </script>
+</body>
+</html>

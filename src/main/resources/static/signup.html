@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <form id="signupForm">
+            <h2>Signup</h2>
+            <input type="text" id="username" placeholder="Enter Your Username" required>
+            <br>
+            <input type="text" id="firstName" placeholder="Enter Your First Name" required>
+            <br>
+            <input type="text" id="lastName" placeholder="Enter Your Last Name" required>
+            <br>
+            <input type="email" id="email" placeholder="Enter Your Email" required>
+            <br>
+            <input type="password" id="password" placeholder="Enter Your Password" required>
+            <br>
+            <input type="password" id="confirmPassword" placeholder="Enter Your Confirm Password" required>
+            <br>
+            <input type="text" id="phoneNumber" placeholder="Enter Your Phone Number" required>
+            <br>
+          
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+    <script>
+		document.getElementById("signupForm").addEventListener("submit", async function (event) {
+		    event.preventDefault(); 
+
+		    const userData = {
+				userName: document.getElementById('username').value,
+		        name: document.getElementById('firstName').value, 
+		        lastName: document.getElementById('lastName').value,
+		        email: document.getElementById('email').value,
+		        password: document.getElementById('password').value,
+		        confirmPassword: document.getElementById('confirmPassword').value,
+		        phoneNumber: document.getElementById('phoneNumber').value,
+		    };
+
+		    if (!userData.userName|| !userData.name || !userData.lastName || !userData.email || 
+		        !userData.password || !userData.confirmPassword || 
+		        !userData.phoneNumber) {
+		        alert("Please fill out all fields.");
+		        return;
+		    }
+
+		    try {
+		        const response = await fetch('/user/save', {
+		            method: 'POST',
+		            headers: {
+		                'Content-Type': 'application/json'
+		            },
+		            body: JSON.stringify(userData)
+		        });
+
+		        const result = await response.json();
+
+		        if (response.ok) {
+					window.location.href = `http://localhost:8080/welcome.html?name=${encodeURIComponent(userData.userName)}`;
+		        } else {
+		            alert(result.message);
+					location.reload();
+		        }
+		    } catch (error) {
+		        console.error('Error:', error);
+		        alert('An error occurred while submitting the form.');
+		    }
+		});
+
+    </script>
+</body>
+
+</html>
