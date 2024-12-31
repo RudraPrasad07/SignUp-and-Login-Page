@@ -34,11 +34,11 @@
 ### 2) Setup
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/YourGitHubUsername/UserAuthApp.git
+   git clone https://github.com/RudraPrasad07/SignUp-and-Login-Page.git
    ```
 2. **Navigate to the Project Directory:**
    ```bash
-   cd UserAuthApp
+   cd SignUp-and-Login-Page
    ```
 3. **Configure Database:**
    Update `src/main/resources/application.properties` with your MySQL database details:
