@@ -15,19 +15,21 @@
 ## Tech Stack
 - **Language:** Java
 - **Framework:** Spring Boot
-- **Security:** Spring Security, JWT
 - **Database:** MySQL
+- **Security:** Spring Security, JWT Token
 - **Build Tool:** Maven
 - **ORM:** Hibernate (JPA)
 - **Dependency Management:** Lombok
+- **Testing:** JUnit 5, Spring Boot Test
+- **API Documentation:** Swagger UI (for interactive API documentation and testing)
+- **Version Control:** Git
 
 ## Getting Started
-
 ### 1) Prerequisites
-1. **Java:** Ensure JDK 11 or later is installed.
-2. **Maven:** Install Maven to build the project. Download it from the [Apache Maven website](https://maven.apache.org/download.cgi).
-3. **MySQL:** Set up MySQL and create a database for the application.
-4. **IDE:** Use a Java IDE like IntelliJ IDEA, Eclipse, or VSCode.
+1. **Java:**  Ensure that JDK 11 or later is installed. You can download it from the Oracle website or use OpenJDK.
+2. **Maven:** Ensure Maven is installed to build the project. You can download it from the [Apache Maven website](https://maven.apache.org/download.cgi).
+3. **MySQL:** Install MySQL for managing the database. You can download it from the [MySQL website](https://dev.mysql.com/downloads/installer/). Create a database for the application.
+4. **IDE:** A Java Integrated Development Environment (IDE) like Eclipse, IntelliJ IDEA, or VSCode can help you manage and run the project efficiently.
 
 ### 2) Setup
 1. **Clone the Repository:**
